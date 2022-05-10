@@ -1,0 +1,16 @@
+{
+  "name": "personal",
+  "version": "1.0.0",
+  "description": "just a down template project",
+  "main": "wegi.js",
+  "author": "wegi8",
+  "license": "ISC",
+  "bin": {
+    "wegi": "./wegi.js"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "ora": "^6.1.0"
+  },
+  "type": "module"
+}
