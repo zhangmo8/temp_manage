@@ -3,10 +3,23 @@
   "version": "1.0.0",
   "description": "this is a template manage project",
   "main": "wegi.js",
-  "author": "wegi8",
-  "license": "ISC",
+  "author": "wegi8 <18272190626@163.com>",
+  "license": "MIT",
   "bin": {
     "wegi": "./wegi.js"
+  },
+  "keywords": [
+    "template",
+    "template_manager",
+    "project-template",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wegi8/temp_manage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wegi8/temp_manage/issues"
   },
   "dependencies": {
     "commander": "^9.2.0",
