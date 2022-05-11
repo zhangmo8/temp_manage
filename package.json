@@ -1,7 +1,7 @@
 {
-  "name": "personal",
+  "name": "temp_manage",
   "version": "1.0.0",
-  "description": "just a down template project",
+  "description": "this is a template manage project",
   "main": "wegi.js",
   "author": "wegi8",
   "license": "ISC",
@@ -9,6 +9,8 @@
     "wegi": "./wegi.js"
   },
   "dependencies": {
+    "commander": "^9.2.0",
+    "download-git-repo": "^3.0.2",
     "inquirer": "^8.2.4",
     "ora": "^6.1.0"
   },

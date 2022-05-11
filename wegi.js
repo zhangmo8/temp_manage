@@ -2,6 +2,11 @@
 import fs from 'fs'
 import inquirer from 'inquirer'
 import ora from 'ora'
+import { resolve } from 'path'
+import download from 'download-git-repo'
+import { readFile } from 'fs/promises';
+
+const templateJson = JSON.parse(await readFile(new URL('./template.json', import.meta.url)));
 
 const spinner = ora('Loading...');
 const questions = [
@@ -23,19 +28,13 @@ const questions = [
     type: 'list',
     name: 'repository',
     message: 'what\'s the template do you want?',
-    choices: [
-      { name: 'vue3+ts', value: "11" },
-      { name: 'react+ts', value: "222" },
-      { name: 'vue', value: "33" },
-      { name: 'react', value: "44" },
-    ]
+    choices: templateJson
   }
 ];
 
 inquirer
   .prompt(questions)
   .then(answers => {
-    spinner.start();
     // 获取答案
     const projectName = answers.projectName;
     const repository = answers.repository;
@@ -43,13 +42,21 @@ inquirer
     spinner.color = 'green';
     console.log("\nprojectName", projectName);
     console.log("repository", repository);
-    setTimeout(() => {
-      spinner.stop();
-      console.log('Successfully, Good lucky!');
-    }, 1000);
-    // downloadTemplate({ repository, version, projectName });
+    downloadTemplate({ repository, projectName });
   });
 
-const downloadTemplate = () => {
 
-}
+const downloadTemplate = function ({ repository, projectName }) {
+  spinner.start();
+  // repository模板地址  projectName项目名称 // clone 是否是克隆
+  const CWD = process.cwd()
+  const destination = resolve(CWD)
+  download(repository, destination + '/' + projectName, (err) => {
+    console.log(err ? `Download Error: ${err}` : 'Download Successful');
+    if (err !== 'Error') {
+      spinner.stop();
+      console.log('Successfully, Good lucky!');
+      // editFile({ version, projectName });
+    }
+  })
+};
