@@ -16,7 +16,7 @@ So now if you want to use it, you can only use Git.
 ```
 
 ```shell
- npm i
+ npm i && npm link
 ```
 
 ```shell
