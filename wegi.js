@@ -48,15 +48,29 @@ inquirer
 
 const downloadTemplate = function ({ repository, projectName }) {
   spinner.start();
-  // repository模板地址  projectName项目名称 // clone 是否是克隆
   const CWD = process.cwd()
   const destination = resolve(CWD)
   download(repository, destination + '/' + projectName, (err) => {
     console.log(err ? `Download Error: ${err}` : 'Download Successful');
     if (err !== 'Error') {
-      spinner.stop();
-      console.log('Successfully, Good lucky!');
-      // editFile({ version, projectName });
+      editFile({ projectName });
     }
   })
+};
+
+const editFile = function ({ projectName }) {
+  // 读取文件
+  fs.readFile(`${process.cwd()}/${projectName}/package.json`, (err, data) => {
+    if (err) throw err;
+    // 获取json数据并修改项目名称和版本号
+    let _data = JSON.parse(data.toString())
+    _data.name = projectName
+    let str = JSON.stringify(_data, null, 4);
+    // 写入文件
+    fs.writeFile(`${process.cwd()}/${projectName}/package.json`, str, function (err) {
+      if (err) throw err;
+    })
+    spinner.succeed();
+    console.log('Successfully!!!');
+  });
 };
