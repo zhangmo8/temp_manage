@@ -20,7 +20,7 @@ So now if you want to use it, you can only use Git.
 ```
 
 ```shell
- wegi
+ tm create projectName
 ```
 
 # Future
