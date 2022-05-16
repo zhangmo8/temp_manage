@@ -1,5 +1,9 @@
 import { createRequire } from 'module'
 import chalk from 'chalk'
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+export const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const require = createRequire(import.meta.url);
  

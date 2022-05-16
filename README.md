@@ -6,7 +6,11 @@
 
 # temp_manage
 
+[![NPM](https://nodei.co/npm/temp-manage.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/temp-manage/)
+
 A simple self-use pull template project.
+
+Supports `github`, `gitlab`, `Bitbucket`
 
 If you have an excellent template project, you can leave address in issue.
 
@@ -16,12 +20,22 @@ If you have an excellent template project, you can leave address in issue.
 npm i temp_manage -g
 ```
 
+# Create new project from template
+
 ```shell
- tm create projectName
+ tm create <projectName>
 ```
+
+# Add new template
+
+```shell
+ tm add <templateName>
+```
+
+The repo rules of the template can be viewed [here](https://www.npmjs.com/package/download-git-repo)
 
 # Future
 
-- [ ] support the `add <templateName>|<templateAddress>`
-- [ ] support the `remove | del <templateName>`
+- [x] ~~support the `add <templateName>|<templateAddress>`~~
+- [ ] support the `remove | rm <templateName>`
 - [ ] set the source url that personal json `tm set source=<url>`

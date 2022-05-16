@@ -6,3 +6,8 @@ export default function viewList() {
     console.log(`${i + 1}: ${item.name}`);
   });
 }
+
+export function getList() {
+  const templateJson = require('./template.json');
+  return templateJson;
+}
