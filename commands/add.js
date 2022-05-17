@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import inquirer from 'inquirer'
 import ora from 'ora'
 import fs from 'fs'
+import { getList } from "./list.js";
 
 const questions = [
   {
@@ -14,10 +15,15 @@ const questions = [
 const spinner = ora('Loading... \n');
 
 export default function addTemplate(name) {
+  const templateList = getList();
+  const i = templateList.findIndex((item) => item.name === name);
+  if (i !== -1) {
+    logger.error(`Error: the ${name} is already in you template list !!!`)
+    return
+  }
   inquirer
     .prompt(questions)
     .then(answers => {
-      // 获取答案
       spinner.start();
       const repository = answers.repository;
       spinner.color = 'green';
@@ -25,7 +31,6 @@ export default function addTemplate(name) {
       logger.warning(`repository: ${repository}`);
       rewriteTheTemplateJson(name, repository);
     });
-
 }
 
 function rewriteTheTemplateJson(name, repository) {
@@ -38,12 +43,12 @@ function rewriteTheTemplateJson(name, repository) {
     // 获取json数据并修改项目名称和版本号
     let _data = JSON.parse(data.toString())
     _data.push({ name, value: repository })
-    let str = JSON.stringify(_data, null, 4);
+    let str = JSON.stringify(_data, null, 2);
     // 写入文件
     fs.writeFile(template_dir, str, function (err) {
       if (err) throw err;
       spinner.succeed();
-      logger.success(`Download Success`);
+      logger.success(`Add Success`);
     })
   });
 }

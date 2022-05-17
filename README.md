@@ -34,8 +34,21 @@ npm i temp_manage -g
 
 The repo rules of the template can be viewed [here](https://www.npmjs.com/package/download-git-repo)
 
+# Remove template
+
+```shell
+ tm remove <templateName>
+```
+
+or
+
+```shell
+ tm rm <templateName>
+```
+
 # Future
 
 - [x] ~~support the `add <templateName>|<templateAddress>`~~
-- [ ] support the `remove | rm <templateName>`
-- [ ] set the source url that personal json `tm set source=<url>`
+- [x] ~~support the `remove | rm <templateName>`~~
+- [ ] ~~set the source url that personal json `tm set source=<url>`~~(Because I didn't think about how to realize it more appropriately, I changed it to export form)
+- [ ] Users can edit the template list directly to facilitate migration `tm explorer`

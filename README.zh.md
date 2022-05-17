@@ -34,8 +34,21 @@ npm i temp_manage -g
 
 新增模版的repo规则请查看 [这里](https://www.npmjs.com/package/download-git-repo)
 
+# 删除模版
+
+```shell
+ tm remove <templateName>
+```
+
+或者
+
+```shell
+ tm rm <templateName>
+```
+
 # 未来的工作
 
 - [x] ~~支持自定义增加模版 `add <templateName>|<templateAddress>`~~
-- [ ] 支持自定义删除模版 `remove | rm <templateName>`
-- [ ] 支持设置`模版列表`地址 `tm set source=<url>`
+- [x] ~~支持自定义删除模版 `remove | rm <templateName>`~~
+- [ ] ~~支持设置`模版列表`地址 `tm set source=<url>`~~（由于没想好怎样实现更为合适，固改为导出形式）
+- [ ] 支持用户直接编辑模版列表，方便迁移 `tm explorer`
