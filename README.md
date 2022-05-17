@@ -17,7 +17,7 @@ If you have an excellent template project, you can leave address in issue.
 # Install
 
 ```shell
-npm i temp_manage -g
+npm i temp-manage -g
 ```
 
 # Create new project from template

@@ -17,7 +17,7 @@
 # 安装
 
 ```shell
-npm i temp_manage -g
+npm i temp-manage -g
 ```
 
 # 创建项目并选择模版
