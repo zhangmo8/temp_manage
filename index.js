@@ -6,6 +6,7 @@ import createProject from './commands/create.js'
 import viewList from './commands/list.js'
 import addTemplate from './commands/add.js'
 import removeTemplate from './commands/remove.js'
+import openFileManager from './commands/open.js'
 
 const program = new Command();
 
@@ -34,6 +35,12 @@ program
   .alias('rm')
   .description('remove a template from the template list')
   .action(removeTemplate)
+
+program
+  .command('open')
+  .alias('explorer')
+  .description('View in template.json File Manager')
+  .action(openFileManager)
 
 program.on('command:*', ([cmd]) => {
   program.outputHelp()

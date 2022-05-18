@@ -1,6 +1,6 @@
 {
   "name": "temp-manage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "this is a template manage project",
   "main": "index.js",
   "author": "wegi8 <18272190626@163.com>",
@@ -26,6 +26,7 @@
     "chalk": "^5.0.1",
     "commander": "^9.2.0",
     "download-git-repo": "^3.0.2",
+    "execa": "^6.1.0",
     "inquirer": "^8.2.4",
     "ora": "^6.1.0"
   },

@@ -2,5 +2,8 @@
   {
     "name": "antfu/vitesse",
     "value": "antfu/vitesse#main"
+  },{
+    "name": "varletjs/varlet-starter",
+    "value": "varletjs/varlet-h5-lite-starter#main"
   }
 ]

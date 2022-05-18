@@ -37,18 +37,21 @@ npm i temp-manage -g
 # 删除模版
 
 ```shell
- tm remove <templateName>
+ tm <rm|remove> <templateName>
 ```
 
-或者
+# 迁移 或者 直接更改模版列表的json文件
 
 ```shell
- tm rm <templateName>
+ tm <open|explorer> <templateName>
 ```
+
+您可以通过直接更改打开的文件夹中的template.json来操作模板列表，也可以将其直接复制到另一台计算机并进行迁移。
 
 # 未来的工作
 
 - [x] ~~支持自定义增加模版 `add <templateName>|<templateAddress>`~~
 - [x] ~~支持自定义删除模版 `remove | rm <templateName>`~~
 - [ ] ~~支持设置`模版列表`地址 `tm set source=<url>`~~（由于没想好怎样实现更为合适，固改为导出形式）
-- [ ] 支持用户直接编辑模版列表，方便迁移 `tm explorer`
+- [x] ~~支持用户直接编辑模版列表，方便迁移 `tm open`~~
+- [ ] 这是专门为我自己准备的。您可以在文件夹下创建`.tempc.json`来控制此文件夹中的模板列表。例如，我有两个文件夹，其中一个是公司项目。在这里，我只需要一些业务组件的模板，另一个是我的演示文件夹。我会在里面放一些空白模板。而全局的模版则会在我使用GitHub开发的时候起作用
