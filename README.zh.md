@@ -43,7 +43,7 @@ npm i temp-manage -g
 # 迁移 或者 直接更改模版列表的json文件
 
 ```shell
- tm <open|explorer> <templateName>
+ tm <open|explorer>
 ```
 
 您可以通过直接更改打开的文件夹中的template.json来操作模板列表，也可以将其直接复制到另一台计算机并进行迁移。
