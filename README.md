@@ -43,7 +43,7 @@ The repo rules of the template can be viewed [here](https://www.npmjs.com/packag
 # Transfer or Edit template with JSON
 
 ```shell
- tm <open|explorer> <templateName>
+ tm <open|explorer>
 ```
 
 You can manipulate the template list by directly changing the template.json in the open folder, or you can copy it directly to another computer and migrate it.
