@@ -1,22 +1,13 @@
-import { readFile } from 'fs/promises';
 import { resolve } from 'path'
 import download from 'download-git-repo'
 import inquirer from 'inquirer'
 import ora from 'ora'
 import { logger } from '../global.js';
+import { getList } from './list.js';
 
-const templateJson = JSON.parse(await readFile(new URL('../template.json', import.meta.url)));
 
 const spinner = ora('Loading... \n');
 
-const questions = [
-  {
-    type: 'list',
-    name: 'repository',
-    message: 'what\'s the template do you want?',
-    choices: templateJson
-  }
-];
 
 const downloadTemplate = function ({ repository, projectName, clone = false }) {
   spinner.start();
@@ -33,7 +24,17 @@ const downloadTemplate = function ({ repository, projectName, clone = false }) {
   })
 };
 
-export default function createProject(name, options = { }) {
+export default async function createProject(name, options = { }) {
+  const templateJson = await getList()
+
+  const questions = [
+    {
+      type: 'list',
+      name: 'repository',
+      message: 'what\'s the template do you want?',
+      choices: templateJson
+    }
+  ];
   inquirer
     .prompt(questions)
     .then(answers => {

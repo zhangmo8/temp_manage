@@ -7,13 +7,13 @@ export default async function openFileManager() {
   let commandStr = '';
   switch (platform) {
     case 'darwin':
-      commandStr = 'open .'
+      commandStr = `open ${__dirname}`
       break;
     case 'linux':
-      commandStr = 'nautilus .'
+      commandStr = `nautilus ${__dirname}`
       break;
     case 'win32':
-      commandStr = 'explorer .'
+      commandStr = `explorer ${__dirname}`
       break;
     default:
       logger.error("Unable to determine operating system!")
