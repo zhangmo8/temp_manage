@@ -6,8 +6,6 @@
 
 # temp_manage
 
-[![NPM](https://nodei.co/npm/temp-manage.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/temp-manage/)
-
 A simple self-use pull template project.
 
 Supports `github`, `gitlab`, `Bitbucket`

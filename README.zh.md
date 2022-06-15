@@ -6,8 +6,6 @@
 
 # temp_manage
 
-[![NPM](https://nodei.co/npm/temp-manage.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/temp-manage/)
-
 一个自用的模版管理工具。
 
 暂时仅支持 `github`, `gitlab`, `Bitbucket`
