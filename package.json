@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "this is a template manage project",
   "main": "index.js",
-  "author": "wegi8 <18272190626@163.com>",
+  "author": "zhangmo8 <18272190626@163.com>",
   "license": "MIT",
   "bin": {
     "tm": "./index.js"
@@ -17,10 +17,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wegi8/temp_manage.git"
+    "url": "https://github.com/zhangmo8/temp_manage.git"
   },
   "bugs": {
-    "url": "https://github.com/wegi8/temp_manage/issues"
+    "url": "https://github.com/zhangmo8/temp_manage/issues"
   },
   "dependencies": {
     "chalk": "^5.0.1",
